@@ -1,36 +1,14 @@
-# auto_back_mysql
+自动备份数据库
+主要依靠的是linux的crontab
 
-#### Description
-C语言版本自动备份mysql数据库
+先修改文件里面的：
+1.备份目录
+2.数据库密码
+3.需要备份的数据库名称
 
-#### Software Architecture
-Software architecture description
-
-#### Installation
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### Instructions
-
-1. xxxx
-2. xxxx
-3. xxxx
-
-#### Contribution
-
-1. Fork the repository
-2. Create Feat_xxx branch
-3. Commit your code
-4. Create Pull Request
-
-
-#### Gitee Feature
-
-1. You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2. Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3. Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4. The most valuable open source project [GVP](https://gitee.com/gvp)
-5. The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6. The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1.先用gcc编译成可执行文件
+gcc mysql_backup.c
+mv a.o mysql_backup.o
+2.crontab
+比如。每天晚上23点30分执行
+30 23 * * * /mysql_backs/mysql_backup.o
